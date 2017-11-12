@@ -91,7 +91,13 @@ var getBadges = function(t){
     console.log('We just loaded the card name for fun: ' + cardName);
     
     return [{
-      {
+      // its best to use static badges unless you need your badges to refresh
+      // you can mix and match between static and dynamic
+      title: 'Detail Badge', // for detail badges only
+      text: 'Static',
+      icon: GRAY_ICON, // for card front badges only
+      color: null
+    }, {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
