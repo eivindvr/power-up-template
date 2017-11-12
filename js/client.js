@@ -307,13 +307,8 @@ TrelloPowerUp.initialize({
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Finansiering',
-        callback: function(context) { // function to run on click
-        return context.popup({
-          title: 'Finansiering',
-          url: './financing.html',
-          height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
-        });
-      },{
+      callback: cardButtonCallback
+    },{
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Hitsim',
       callback: cardButtonCallback
