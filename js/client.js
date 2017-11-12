@@ -91,19 +91,6 @@ var getBadges = function(t){
     console.log('We just loaded the card name for fun: ' + cardName);
     
     return [{
-      // dynamic badges can have their function rerun after a set number
-      // of seconds defined by refresh. Minimum of 10 seconds.
-      dynamic: function(){
-        // we could also return a Promise that resolves to this as well if we needed to do something async first
-        return {
-          title: 'Detail Badge', // for detail badges only
-          text: 'Dynamic ' + (Math.random() * 100).toFixed(0).toString(),
-          icon: GRAY_ICON, // for card front badges only
-          color: randomBadgeColor(),
-          refresh: 10 // in seconds
-        };
-      }
-    }, {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
@@ -322,9 +309,9 @@ TrelloPowerUp.initialize({
       // or we can also have a button that is just a simple url
       // clicking it will open a new tab at the provided url
       icon: WHITE_ICON,
-      text: 'URL',
-      url: 'https://trello.com/inspiration',
-      target: 'Inspiring Boards' // optional target for above url
+      text: 'Process Board',
+      url: 'https://intense-wave-76349.herokuapp.com/',
+      target: 'Process Board' // optional target for above url
     }];
   },
   'card-badges': function(t, options){
