@@ -99,7 +99,7 @@ var getBadges = function(t){
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
         return context.popup({
-          title: 'Card Detail Badge Popup',
+          title: 'Finansiering',
           url: './financing.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
@@ -307,8 +307,13 @@ TrelloPowerUp.initialize({
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Finansiering',
-      callback: cardButtonCallback
-    },{
+        callback: function(context) { // function to run on click
+        return context.popup({
+          title: 'Finansiering',
+          url: './financing.html',
+          height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
+        });
+      },{
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Hitsim',
       callback: cardButtonCallback
