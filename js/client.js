@@ -91,13 +91,7 @@ var getBadges = function(t){
     console.log('We just loaded the card name for fun: ' + cardName);
     
     return [{
-      // its best to use static badges unless you need your badges to refresh
-      // you can mix and match between static and dynamic
-      title: 'Detail Badge', // for detail badges only
-      text: 'Static',
-      icon: GRAY_ICON, // for card front badges only
-      color: null
-    }, {
+      {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
@@ -111,15 +105,6 @@ var getBadges = function(t){
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
-    }, {
-      // or for simpler use cases you can also provide a url
-      // when the user clicks on the card detail badge they will
-      // go to a new tab at that url
-      title: 'URL Detail Badge', // for detail badges only
-      text: 'URL',
-      icon: GRAY_ICON, // for card front badges only
-      url: 'https://trello.com/home',
-      target: 'Trello Landing Page' // optional target for above url
     }];
   });
 };
@@ -322,8 +307,27 @@ TrelloPowerUp.initialize({
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
-      text: 'Open Popup',
+      text: 'Finansiering',
       callback: cardButtonCallback
+    },{
+      // but of course, you could also just kick off to a url if that's your thing
+      icon: GRAY_ICON,
+      text: 'Hitsim',
+      url: 'https://developers.trello.com',
+      target: 'Trello Developer Site' // optional target for above url
+    },{
+      // but of course, you could also just kick off to a url if that's your thing
+      icon: GRAY_ICON,
+      text: 'Start Datum',
+      url: 'https://developers.trello.com',
+      target: 'Trello Developer Site' // optional target for above url
+    },
+    {
+      // but of course, you could also just kick off to a url if that's your thing
+      icon: GRAY_ICON,
+      text: 'Just a URL',
+      url: 'https://developers.trello.com',
+      target: 'Trello Developer Site' // optional target for above url
     }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,
