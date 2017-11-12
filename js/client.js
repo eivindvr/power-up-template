@@ -94,13 +94,13 @@ var getBadges = function(t){
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
-      title: 'Popup Detail Badge', // for detail badges only
-      text: 'Popup',
+      title: 'Finansiering', // for detail badges only
+      text: 'Finansiering',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
         return context.popup({
           title: 'Card Detail Badge Popup',
-          url: './settings.html',
+          url: './financing.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
@@ -314,7 +314,7 @@ TrelloPowerUp.initialize({
       callback: cardButtonCallback
     },{
       icon: GRAY_ICON, // don't use a colored icon here
-      text: 'Open Popup',
+      text: 'Misc',
       callback: cardButtonCallback
     } ];
   },
