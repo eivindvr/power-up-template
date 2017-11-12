@@ -9,7 +9,7 @@ var vegetableSelector = document.getElementById('vegetable');
 t.render(function(){
   return Promise.all([
     t.get('card', 'shared', 'fruit'),
-    t.get('card', 'private', 'vegetable')
+    t.get('card', 'shared', 'vegetable')
   ])
   .spread(function(savedFruit, savedVegetable){
     if(savedFruit && /[a-z]+/.test(savedFruit)){
@@ -26,7 +26,7 @@ t.render(function(){
 });
 
 document.getElementById('save').addEventListener('click', function(){
-  return t.set('card', 'private', 'vegetable', vegetableSelector.value)
+  return t.set('card', 'shared', 'vegetable', vegetableSelector.value)
   .then(function(){
     return t.set('card', 'shared', 'fruit', fruitSelector.value);
   })
