@@ -80,12 +80,6 @@ var GLITCH_ICON = './images/glitch.svg';
 var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 
-var randomBadgeColor = function() {
-   return t.lists('all')
-    .then(function (lists) {
-      console.log(JSON.stringify(lists, null, 2));
-    });
-};
 
 var listStuff = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
@@ -308,6 +302,12 @@ TrelloPowerUp.initialize({
   },
   'card-badges': function(t, options){
     return getBadges(t);
+  },
+  'board-buttons': function (t, opts) {
+    return t.lists('all')
+    .then(function (lists) {
+      console.log(JSON.stringify(lists, null, 2));
+    });
   },
   'card-buttons': function(t, options) {
     return [{
