@@ -306,7 +306,9 @@ TrelloPowerUp.initialize({
   'board-buttons': function (t, opts) {
     return t.lists('all')
     .then(function (lists) {
+      console.log('test');
       console.log(JSON.stringify(lists, null, 2));
+
     });
   },
   'card-buttons': function(t, options) {
